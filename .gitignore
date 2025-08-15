@@ -10,6 +10,7 @@
 
 # No USD files allowed in the repo
 **/*.usd
+!source/isaaclab_assets/data/Robots/RSL-ETHZ/AoW-D/aow_d.usd
 **/*.usda
 **/*.usdc
 **/*.usdz
