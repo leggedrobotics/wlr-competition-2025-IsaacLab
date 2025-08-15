@@ -10,6 +10,7 @@
 from .allegro import *
 from .ant import *
 from .anymal import *
+from .aow import *
 from .cart_double_pendulum import *
 from .cartpole import *
 from .fourier import *

@@ -21,6 +21,36 @@ RAY_CASTER_MARKER_CFG = VisualizationMarkersCfg(
 )
 """Configuration for the ray-caster marker."""
 
+RED_DOT_MARKER_CFG = VisualizationMarkersCfg(
+    markers={
+        "dot": sim_utils.SphereCfg(
+            radius=0.05,
+            visual_material=sim_utils.PreviewSurfaceCfg(diffuse_color=(1.0, 0.0, 0.0)),
+        ),
+    },
+)
+"""Configuration for the red dot marker."""
+
+BLUE_DOT_MARKER_CFG = VisualizationMarkersCfg(
+    markers={
+        "dot": sim_utils.SphereCfg(
+            radius=0.05,
+            visual_material=sim_utils.PreviewSurfaceCfg(diffuse_color=(0.0, 0.0, 1.0)),
+        ),
+    },
+)
+"""Configuration for the blue dot marker."""
+
+GREEN_STRIP_MARKER_CFG = VisualizationMarkersCfg(
+    markers={
+        "strip": sim_utils.CylinderCfg(
+            radius=0.1,
+            height=0.01,
+            visual_material=sim_utils.PreviewSurfaceCfg(diffuse_color=(0.0, 1.0, 0.0), opacity=0.5),
+        ),
+    },
+)
+"""Configuration for the ray-caster marker3."""
 
 CONTACT_SENSOR_MARKER_CFG = VisualizationMarkersCfg(
     markers={

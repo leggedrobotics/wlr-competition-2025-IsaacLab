@@ -150,10 +150,19 @@ Contact sensor.
 """
 
 
-def illegal_contact(env: ManagerBasedRLEnv, threshold: float, sensor_cfg: SceneEntityCfg) -> torch.Tensor:
+def illegal_contact(
+    env: ManagerBasedRLEnv,
+    threshold: float,
+    sensor_cfg: SceneEntityCfg,
+    extended_sensor_cfg: SceneEntityCfg,
+    extended_step: int,
+) -> torch.Tensor:
     """Terminate when the contact force on the sensor exceeds the force threshold."""
     # extract the used quantities (to enable type-hinting)
-    contact_sensor: ContactSensor = env.scene.sensors[sensor_cfg.name]
+    if env.common_step_counter > extended_step:
+        contact_sensor: ContactSensor = env.scene.sensors[extended_sensor_cfg.name]
+    else:
+        contact_sensor: ContactSensor = env.scene.sensors[sensor_cfg.name]
     net_contact_forces = contact_sensor.data.net_forces_w_history
     # check if any contact force exceeds the threshold
     return torch.any(
