@@ -15,7 +15,7 @@ from isaaclab_tasks.manager_based.path_tracking.end_to_end.env_helper import (
     add_base_play_configuration,
     add_base_train_configuration,
 )
-from isaaclab_tasks.manager_based.locomotion.velocity.velocity_teacher_env_cfg import LocomotionVelocityRoughEnvCfg
+from isaaclab_tasks.manager_based.locomotion.velocity.velocity_student_env_cfg import LocomotionVelocityRoughEnvCfg
 
 
 """
