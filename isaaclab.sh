@@ -293,6 +293,9 @@ while [[ $# -gt 0 ]]; do
                 echo "[INFO] Installing PyTorch 2.7.0 with CUDA 12.8 support..."
                 ${python_exe} -m pip install torch==2.7.0 torchvision==0.22.0 --index-url https://download.pytorch.org/whl/cu128
             fi
+            # install tabulate package
+            echo "[INFO] Installing tabulate package..."
+            ${python_exe} -m pip install tabulate
             # recursively look into directories and install them
             # this does not check dependencies between extensions
             export -f extract_python_exe
